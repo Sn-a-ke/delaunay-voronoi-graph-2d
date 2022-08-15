@@ -74,5 +74,6 @@ Poisson Disk random points :
 
 ## Benchmarks
 ```
-todo
+//todo
+15000 verts - 7ms
 ```
