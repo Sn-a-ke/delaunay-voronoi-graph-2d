@@ -67,6 +67,11 @@ auto VoronoiGraph3d = Voronoi::voronoi<Vec3d>(TriangulatedGraph3d);
 
 ```
 
+Poisson Disk random points :
+
+![alt text](https://i.imgur.com/yQ17dMy.jpeg)
+
+
 ## Benchmarks
 ```
 todo
