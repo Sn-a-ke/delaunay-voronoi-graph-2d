@@ -142,6 +142,22 @@ public:
 			}
 		}
 	};
+	template<typename LambdaType>
+	void for_each_edge(LambdaType Lambda) const
+	{
+		for (int32_t i = 0; i < Nodes.size(); ++i)
+		{
+			const VectorType& V1 = Nodes[i];
+			for (auto j : NodeLinks[i])
+			{
+				const VectorType& V2 = Nodes[j];
+				if (V1[0] < V2[0] || (V1[0] == V2[0] && V1[1] < V2[1]))
+				{
+					Lambda(V1, V2);
+				}
+			}
+		}
+	};
 
 	// todo: works only if have sorted links
 	bool IsBorder(IntType InNodeID) const
