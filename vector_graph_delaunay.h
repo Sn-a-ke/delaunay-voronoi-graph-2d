@@ -1,4 +1,4 @@
-// Copyright 2020 Alexandr Marchenko. All Rights Reserved.
+// Copyright 2022 Alexandr Marchenko. All Rights Reserved.
 
 #pragma once
 
