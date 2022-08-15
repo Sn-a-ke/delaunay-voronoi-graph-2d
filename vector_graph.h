@@ -90,23 +90,17 @@ public:
 	void remove_edge(const IntType U, const IntType V)
 	{
 		auto& ConU = NodeLinks[U];
-		auto& ConV = NodeLinks[V];
-
-		for (auto It = ConU.begin(); It != ConU.end(); ++It)
+		auto It1 = std::find(ConU.begin(), ConU.end(), V);
+		if (It1 != ConU.end())
 		{
-			if (*It == V)
-			{
-				ConU.erase(It);
-				break;
-			}
+			ConU.erase(It1);
 		}
-		for (auto It = ConV.begin(); It != ConV.end(); ++It)
+
+		auto& ConV = NodeLinks[V];
+		auto It2 = std::find(ConV.begin(), ConV.end(), U);
+		if (It1 != ConV.end())
 		{
-			if (*It == U)
-			{
-				ConV.erase(It);
-				break;
-			}
+			ConV.erase(It2);
 		}
 	}
 
